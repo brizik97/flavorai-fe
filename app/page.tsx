@@ -1,5 +1,5 @@
-import LatestReceipes from './LatestReceipes';
-import AddRecipe from './AddRecipe';
+import AddRecipe from '@/components/recipe/AddRecipe';
+import LatestReceipes from '@/components/recipe/LatestReceipes';
 
 export default function Home() {
   return (

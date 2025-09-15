@@ -4,7 +4,6 @@ import './globals.css';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import DesktopHeader from '@/components/headers/DesktopHeader';
 import MobileHeader from '@/components/headers/MobileHeader';
-import { SessionProvider } from 'next-auth/react';
 import AuthProvider from '@/components/providers/AuthProvider';
 
 const geistSans = Geist({

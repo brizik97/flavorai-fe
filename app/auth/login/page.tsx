@@ -37,12 +37,13 @@ const Login = () => {
         email: data.email,
         password: data.password,
         callbackUrl: '/',
+        redirect: false,
       });
-      router.push('/');
       if (signInResponse?.error) {
         setError('root', { message: 'Invalid email or password' });
         return;
       }
+      router.push('/');
     } catch {
       setError('root', { message: 'Invalid email or password' });
     }

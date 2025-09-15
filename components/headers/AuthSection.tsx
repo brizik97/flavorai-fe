@@ -15,7 +15,7 @@ const AuthSection = () => {
         <button
           type="button"
           onClick={signOutHandler}
-          className="text-gray-600 hover:text-gray-900 font-semibold text-lg uppercase"
+          className="text-gray-600 hover:text-gray-900 font-semibold text-lg uppercase cursor-pointer"
         >
           Logout
         </button>

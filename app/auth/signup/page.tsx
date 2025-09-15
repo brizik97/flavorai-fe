@@ -6,7 +6,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import TextInput from '@/components/inputs/TextInput';
 import Button from '@/components/buttons/Button';
 import Link from 'next/link';
-import { register } from '@/lib/api';
+import { register } from '@/lib/api/api';
 import { useRouter } from 'next/navigation';
 
 const schema = yup.object().shape({

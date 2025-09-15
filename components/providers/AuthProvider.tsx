@@ -3,7 +3,7 @@
 import React from 'react';
 import { SessionProvider, useSession } from 'next-auth/react';
 import Loader from '../loader/Loader';
-import axios from 'axios';
+import { setAccessToken } from '@/lib/api/api';
 
 type Props = {
   children: React.ReactNode;
@@ -26,10 +26,10 @@ const SessionLoading = ({ children }: Props) => {
     const accessToken = session.data?.accessToken;
     if (accessToken) {
       localStorage.setItem('accessToken', accessToken);
-      axios.defaults.headers.common.Authorization = `Bearer ${accessToken}`;
+      setAccessToken(accessToken);
     } else {
       localStorage.removeItem('accessToken');
-      delete axios.defaults.headers.common.Authorization;
+      setAccessToken();
     }
   }
 

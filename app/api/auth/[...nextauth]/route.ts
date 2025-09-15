@@ -1,6 +1,6 @@
+import { getUserProfile, login } from '@/lib/api/auth';
 import NextAuth from 'next-auth/next';
 import CredentialsProvider from 'next-auth/providers/credentials';
-import { getUserProfile, login } from '@/lib/api';
 
 const handler = NextAuth({
   providers: [
@@ -17,10 +17,11 @@ const handler = NextAuth({
               email: credentials?.email,
               password: credentials?.password,
             });
+
             const { accessToken } = res;
             if (!accessToken) return null;
 
-            const user = await getUserProfile({ token: accessToken });
+            const user = await getUserProfile(accessToken);
             if (!user) return null;
 
             return {

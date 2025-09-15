@@ -7,8 +7,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { Dialog, DialogContent, DialogTitle } from '@mui/material';
 import { useState } from 'react';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
-import { addRecipe } from '@/lib/api';
 import { useSession } from 'next-auth/react';
+import { addRecipe } from '@/lib/api/recipe';
 
 const schema = yup.object().shape({
   title: yup.string().required('Title is required'),
