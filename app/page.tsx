@@ -1,5 +1,5 @@
 import AddRecipe from '@/components/recipe/AddRecipe';
-import LatestReceipes from '@/components/recipe/LatestReceipes';
+import LatestRecipes from '@/components/recipe/LatestRecipes';
 
 export default function Home() {
   return (
@@ -14,7 +14,7 @@ export default function Home() {
           </div>
           <AddRecipe />
         </div>
-        <LatestReceipes />
+        <LatestRecipes />
       </div>
     </main>
   );

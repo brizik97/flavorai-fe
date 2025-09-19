@@ -1,8 +1,10 @@
+'use client';
 import Link from 'next/link';
-import { InfoOutlined } from '@mui/icons-material';
 import AuthSection from './AuthSection';
+import { useSession } from 'next-auth/react';
 
 const DesktopHeader = () => {
+  const { data: session } = useSession();
   return (
     <header className="hidden bg-white lg:block mb-5">
       <div className="mx-auto max-w-screen-xl px-4 py-8 rounded-xl shadow-md">
@@ -21,6 +23,7 @@ const DesktopHeader = () => {
                     <span>Home</span>
                   </Link>
                 </li>
+
                 <li>
                   <Link
                     href="/about"
@@ -29,6 +32,16 @@ const DesktopHeader = () => {
                     <span>About</span>
                   </Link>
                 </li>
+                {session && (
+                  <li>
+                    <Link
+                      href="/my-recipes"
+                      className="text-gray-600 hover:text-gray-900 font-semibold text-lg uppercase"
+                    >
+                      <span>My Recipes</span>
+                    </Link>
+                  </li>
+                )}
                 <li>
                   <AuthSection />
                 </li>

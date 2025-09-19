@@ -6,7 +6,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import TextInput from '@/components/inputs/TextInput';
 import Button from '@/components/buttons/Button';
 import Link from 'next/link';
-import { register } from '@/lib/api/api';
+import { register } from '@/lib/api/auth';
 import { useRouter } from 'next/navigation';
 
 const schema = yup.object().shape({
@@ -44,7 +44,8 @@ const Signup = () => {
         password: data.password,
       });
       router.push('/auth/login');
-    } catch {
+    } catch (e) {
+      console.log(e);
       setError('root', { message: 'Invalid email or password' });
     }
   };

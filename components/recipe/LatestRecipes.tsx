@@ -4,7 +4,9 @@ import RecipeItem from './RecipeItem';
 
 async function getData(): Promise<Recipe[] | undefined> {
   const domain = backendUrl + '/recipe';
-  const res = await fetch(domain, { next: { revalidate: 60 * 60 * 24 } });
+  const res = await fetch(domain, {
+    next: { revalidate: 10 * 60, tags: ['recipes'] },
+  });
   const data = await res.json();
   if (!res.ok) {
     return undefined;
